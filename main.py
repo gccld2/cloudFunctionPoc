@@ -40,7 +40,7 @@ def streaming(event, context):
     """
     if 'data' in event:
         row = json.loads(base64.b64decode(event['data']).decode('utf-8'))
-        row['date_time'] = datetime.fromtimestamp(row['ts']).strftime("%Y-%m-%d %H:%M:%S")
+        row['poc_datetime_formatted'] = datetime.fromtimestamp(row['ts']).strftime("%Y-%m-%d %H:%M:%S")
         try:
             _insert_into_bigquery(row)
         except Exception:

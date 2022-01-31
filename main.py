@@ -10,7 +10,7 @@ from google.cloud import pubsub_v1
 
 PROJECT_ID = 'bdtest-335709'
 BQ_DATASET = 'cloud_functions_poc_ds'
-BQ_TABLE = 'cloud_functions_poc'
+BQ_TABLE = 'poc_cloud_functions'
 PS = pubsub_v1.PublisherClient()
 ERROR_TOPIC = f'projects/{PROJECT_ID}/topics/streaming_error_topic'
 BQ = bigquery.Client()
